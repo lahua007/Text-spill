@@ -2,7 +2,6 @@ import random
 import time
 a = 0
 
-
 player_health = random.randint(1, 10)
 player_damage = random.randint(1, 10)
 
@@ -17,7 +16,7 @@ while a == 0:
     print ("Du har", player_health, "liv og", player_damage, "damage")
     print ("Monsteret har", monster_health, "liv og", monster_damage, "damage")
 
-    angrep = input("Hvil du angripe først?")
+    angrep = input("Vil du angripe først?")
     if angrep == "ja":
         monster_health = monster_health - player_damage
         print ("Du gjør", player_damage, "skade, og monsteret har", monster_health, "liv igjen")
