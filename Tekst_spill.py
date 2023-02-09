@@ -8,6 +8,19 @@ player_damage = random.randint(1, 10)
 monster_health = random.randint(1, 10)
 monster_damage = random.randint(1, 10)
 
+def shop():
+    print("Du kan velge et av disse gjenstandene til hjelp")
+    print("1. Health boost trinket")
+    print("2. Damage boost trinket")
+    item = input("Skriv 1 eller 2: ")
+    if item == "1":
+        player_health = player_health + 5
+    elif item == "2":
+        player_damage = player_damage + 5
+
+
+print ("I dette spillet, kjemper du mot monsteret fram til du dør")
+shop()
 print ("Du får random stats hver gang du spiller")
 time.sleep(3)
 
