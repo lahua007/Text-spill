@@ -1,19 +1,30 @@
 import time
 import random
-a = 0
 
+a = 0
 player_health = random.randint(1, 10)
 player_damage = random.randint(1, 10)
 
 monster_health = random.randint(1, 10)
 monster_damage = random.randint(1, 10)
 
+def shop():
+    print("du kan velge en av disse to gjenstandene til å hjelpe deg")
+    print("1. health boost trinket")
+    print ("2. damage boost trinket")
+    global player_health
+    global player_damage
+    item = input("Skriv 1 eller 2 for å velge: ")
+    if item == "1":
+        player_health = player_health + 5
+    elif item == "2":
+        player_damage = player_damage + 5
 
 
 
 print ("I dette spillet, kjemper du mot monsteret fram til du dør")
-
-print ("Du får random stats hver gang du spiller")
+shop()
+print ("Du får random stats hver gang du spiller + boosten du valgte")
 time.sleep(3)
 
 while a == 0:
@@ -27,7 +38,6 @@ while a == 0:
         print ("Du gjør", player_damage, "skade, og monsteret har", monster_health, "liv igjen")
         if  monster_health <= 0:
             print ("Monsteret døde")
-            a = 1
         elif monster_health >= 0:
             print ("")
     elif angrep == "nei":
