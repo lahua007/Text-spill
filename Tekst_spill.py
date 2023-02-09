@@ -7,11 +7,12 @@ player_damage = random.randint(1, 10)
 
 monster_health = random.randint(1, 10)
 monster_damage = random.randint(1, 10)
+monster_counter = 0
 
 def shop():
     print("du kan velge en av disse to gjenstandene til å hjelpe deg")
-    print("1. health boost trinket")
-    print ("2. damage boost trinket")
+    print("1. helse styrkende medaljong")
+    print ("2. skade styrkende medaljong")
     global player_health
     global player_damage
     item = input("Skriv 1 eller 2 for å velge: ")
@@ -24,20 +25,33 @@ def shop():
 
 print ("I dette spillet, kjemper du mot monsteret fram til du dør")
 shop()
-print ("Du får random stats hver gang du spiller + boosten du valgte")
+print ("Du får random stats hver gang du spiller + gjenstanden du valgte")
 time.sleep(3)
 
 while a == 0:
     print ("")
-    print ("Du har", player_health, "liv og", player_damage, "damage")
-    print ("Monsteret har", monster_health, "liv og", monster_damage, "damage")
+    print ("Du har", player_health, "liv og", player_damage, "skade")
+    print ("Monsteret har", monster_health, "liv og", monster_damage, "skade")
 
-    angrep = input("Vil du angripe først?")
+    angrep = input("Vil du angripe først? ")
     if angrep == "ja":
         monster_health = monster_health - player_damage
         print ("Du gjør", player_damage, "skade, og monsteret har", monster_health, "liv igjen")
         if  monster_health <= 0:
             print ("Monsteret døde")
+            monster_health = random.randint(1, 10)
+            monster_damage = random.randint(1, 10)
+            monster_counter = monster_counter +1
+            if monster_counter == 5:
+                print ("Du har drept 5 monsteret nå!")
+                print ("Det betyr at du kan oppgradere en av attributtene dine og få +2")
+                print ("Skriv 1 for å oppgradere helse")
+                oppgradering = input("Skriv 2 for å oppgradere skade")
+                if oppgradering == "1":
+                    player_health = player_health + 2
+                elif oppgradering == "2":
+                    player_damage = player_damage + 2
+
         elif monster_health >= 0:
             print ("")
     elif angrep == "nei":
