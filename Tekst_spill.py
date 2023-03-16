@@ -9,9 +9,43 @@ monster_health = random.randint(1, 10)
 monster_damage = random.randint(1, 10)
 monster_counter = 0
 
+fBoss_health = random.randint(20, 30)
+fBoss_damage = random.randint(20, 30)
+def boss():
+    global fBoss_health
+    global fBoss_damage
+    print ("Du har drept 10 monsteret og kommet til første boss")
+    print ("Bossen har mye mer liv og skade enn et vanlig monster")
+    print ("Boss liv:", fBoss_health)
+    print ("Boss skade:", fBoss_damage)
+    print ("")
+
+    print ("Vil du slåss eller prøve å rømme.")
+    boss_fight = input("Skriv ja eller nei: ")
+    boss_fight = boss_fight.lower()
+    if boss_fight == "ja":
+        print ("Monsteret rager og angriper deg først")
+        print ("Han gjør", fBoss_damage, "skade")
+        player_health = player_health - fBoss_damage
+        if player_health <= 0:
+            print ("Du har gått under 0 liv")
+            print ("Skriv 1 for å gjøre en saving throw for en sjanse i å overleve på et liv.")
+            bSavingThrowValg = input("Skriv 0 for å gi opp og dø: ")
+            if bSavingThrowValg == "1":
+                bSavingThrow = random.randint(0, 2)
+                if bSavingThrow == 0:
+                    print ("Du overlevde og har 1 liv")
+                else:
+                    print ("Du failet og døde")
+                
+                
+
+
+
+
 def shop():
-    print("du kan velge en av disse to gjenstandene til å hjelpe deg")
-    print("1. helse styrkende medaljong")
+    print ("du kan velge en av disse to gjenstandene til å hjelpe deg")
+    print ("1. helse styrkende medaljong")
     print ("2. skade styrkende medaljong")
     global player_health
     global player_damage
