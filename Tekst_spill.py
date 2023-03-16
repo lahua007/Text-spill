@@ -37,6 +37,8 @@ def boss():
                     print ("Du overlevde og har 1 liv")
                 else:
                     print ("Du failet og døde")
+            elif bSavingThrowValg == "2":
+                print ("Du mistet lysten til å leve videre og valgte den lette veien.za")
                 
 def shop():
     print ("du kan velge en av disse to gjenstandene til å hjelpe deg")
