@@ -38,11 +38,6 @@ def boss():
                 else:
                     print ("Du failet og døde")
                 
-                
-
-
-
-
 def shop():
     print ("du kan velge en av disse to gjenstandene til å hjelpe deg")
     print ("1. helse styrkende medaljong")
@@ -101,5 +96,3 @@ while a == 0:
             a = 1
         elif player_health >= 0:
             print ("")
-
-
