@@ -38,7 +38,7 @@ def boss():
                 else:
                     print ("Du failet og døde")
             elif bSavingThrowValg == "2":
-                print ("Du mistet lysten til å leve videre og valgte den lette veien.za")
+                print ("Du mistet lysten til å leve videre og valgte den lette veien.")
                 
 def shop():
     print ("du kan velge en av disse to gjenstandene til å hjelpe deg")
@@ -75,6 +75,8 @@ while a == 0:
             elif monster_counter <= 5:
                 monster_health = random.randint(1, 10)
                 monster_damage = random.randint(1, 10)
+        elif monster_counter == 10:
+            boss()
             monster_counter = monster_counter +1
             if monster_counter == 5:
                 print ("Du har drept 5 monsteret nå!")
